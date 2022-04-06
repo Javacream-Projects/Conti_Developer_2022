@@ -1,2 +1,6 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿/*
+    Block-Kommentar: Mehrzeilig
+    console.writeLine(Hello, World!");    
+*/
+// Zeilenkommentar
+Console.WriteLine("Hello, World!"); //Ausgabe einer Zeile
