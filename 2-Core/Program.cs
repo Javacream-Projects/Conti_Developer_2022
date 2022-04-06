@@ -13,5 +13,8 @@ message = "Goodbye World";
 
 //message = 42; //Compiler-Fehler
 //message = 'H';//Compiler-Fehler
-message = 'Hello Jupiter';//Compiler-Fehler, Character ist immer ein Einzelzeichen
+//message = 'Hello Jupiter';//Compiler-Fehler, Character ist immer ein Einzelzeichen
 Console.WriteLine(message);
+
+const int number3 = 9;
+//number3 = 42;
