@@ -1,6 +1,4 @@
-﻿/*
-    Block-Kommentar: Mehrzeilig
-    console.writeLine(Hello, World!");    
-*/
-// Zeilenkommentar
-Console.WriteLine("Hello, World!"); //Ausgabe einer Zeile
+﻿//typ name = literal
+string message;// = "Hello World";
+message = "Hello World";
+Console.WriteLine(message);
