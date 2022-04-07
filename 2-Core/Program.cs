@@ -1,30 +1,18 @@
-﻿//for-Loop
-
-for (int i = 0; i < 5; i++)
+﻿string message = "Hello";
+int Sum(int i1, int i2) 
 {
-    Console.WriteLine(i);
+    int result = i1 + i2; 
+    bool state = i1 > 5;
+    return result;
 }
 
-for (int i = 0; i < 5; i++)
+string Hugo(bool p1, string p2, int p3) 
 {
-    Console.WriteLine(i);
+    Console.WriteLine(p2.Length);
+    Console.WriteLine(p1.ToString());
+
+    return message;
 }
 
-for (int i = 42; i <= 50; i+=2)
-{
-    Console.WriteLine(i);
-}
-
-int counter = 0;
-while(counter < 5)
-{
-    counter += 2;
-    Console.WriteLine(counter);
-}
-
-do
-{
-    counter += 2;
-    Console.WriteLine(counter);
-}
-while(counter < 10);
+int sum = Sum(4, 38);
+Console.WriteLine(sum);
