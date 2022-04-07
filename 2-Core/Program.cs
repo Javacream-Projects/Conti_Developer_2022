@@ -1,2 +1,3 @@
-﻿double d = 4; //impliziter Cast, vom "kleineren" in den "größeren" Datentypen
-int i = (int)4.2; //(new type) expliziter Cast in die andere Richtung
+﻿string numberAsString = Console.ReadLine();
+int number = Convert.ToInt32(numberAsString);
+double number2 = Convert.ToDouble(Console.ReadLine());
