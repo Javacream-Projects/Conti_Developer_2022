@@ -56,13 +56,21 @@
     return planetName;
 }
 
-while(true)
+void Application()
 {
-    string input = Console.ReadLine();
-    if ("exit" == input)
+    while(true)
     {
-        break;
+        string input = Console.ReadLine();
+        if ("exit" == input)
+        {
+            break;
+        }
+        int planetPosition = Convert.ToInt32(input);
+        string planet = PlanetFromPosition(planetPosition);
+        Console.WriteLine(planet);
     }
-    int planetPosition = Convert.ToInt32(input);
-    Console.WriteLine(PlanetFromPosition(planetPosition));
 }
+
+Application();
+
+
