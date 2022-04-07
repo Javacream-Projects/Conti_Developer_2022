@@ -7,6 +7,7 @@ if (planet > 0 && planet <= 9)
     {
         case 1:
             {
+                output += "Mercury";
                 break;
             }
         case 2:
