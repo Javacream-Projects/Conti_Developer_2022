@@ -1,58 +1,51 @@
-﻿int planet = Convert.ToInt32(Console.ReadLine());
-if (planet > 0 && planet <= 9)
-{
+﻿//for-Loop
 
-    string output = "Planet is ";
-    switch(planet)
+for (int i = 0; i < 5; i++)
+{
+    Console.WriteLine(i);
+}
+
+for (int i = 0; i < 5; i++)
+{
+    Console.WriteLine(i);
+}
+
+for (int i = 42; i <= 50; i+=2)
+{
+    Console.WriteLine(i);
+}
+
+
+/* Möglich, aber in der Praxis nicht gebräuchlich:
+
+int counter = 0;
+for (; counter < 5; counter++)
+{
+    int j = 2 * counter;
+    Console.WriteLine(j);
+}
+Console.WriteLine(counter);
+
+int counter2 = 0;
+for (; counter2 < 5; )
+{
+    int j = 2 * counter2;
+    Console.WriteLine(j);
+    counter2++;
+}
+Console.WriteLine(counter);
+
+int counter3 = 0;
+bool condition = true;
+for (; condition; )
+{
+    int j = 2 * counter3;
+    Console.WriteLine(j);
+    counter2++;
+    if (counter3 == 5)
     {
-        case 1:
-            {
-                output += "Mercury";
-                break;
-            }
-        case 2:
-            {
-                output += "Venus";
-                break;
-            }
-        case 3:
-            {
-                output += "Earth";
-                break;
-            }
-        case 4:
-            {
-                output += "Mars";
-                break;
-            }
-        case 5:
-            {
-                output += "Jupiter";
-                break;
-            }
-        case 6:
-            {
-                output += "Saturn";
-                break;
-            }
-        case 7:
-            {
-                output += "Uranus";
-                break;
-            }
-        case 8:
-            {
-                output += "Neptune";
-                break;
-            }
-        case 9:
-            {
-                output += "Pluto";
-                break;
-            }
+        condition = false;
     }
-    Console.WriteLine(output);
 }
-else{
-    Console.WriteLine("Planet is unknown");
-}
+Console.WriteLine(counter);
+*/
