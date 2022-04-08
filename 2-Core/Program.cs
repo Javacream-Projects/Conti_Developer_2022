@@ -1,54 +1,91 @@
-﻿void Application()
+﻿string[] PlanetsFromPositions(int[] positions)
 {
-    bool running = true;
-    while(running)
+    string[] planetNames = {};
+    foreach (int position in positions)
     {
-        Console.Write("Enter command: ");
-        string command = Console.ReadLine().ToLower();
-        switch(command)
+        string planetName = "";
+        switch (position)
         {
-            case "split":
-            {
-                Console.Write("Enter input: ");
-                string input = Console.ReadLine();
-                string[] words = input.Split(" ");
-                foreach(string word in words)
+            case 1:
                 {
-                    Console.WriteLine(word);
+                    planetName = "Mercury";
+                    break;
                 }
-                break;
-            }
-            case "exit":
-            {
-                running = false;
-                break;
-            }
-            case "reverse":
-            {
-                Console.Write("Enter input: ");
-                string input = Console.ReadLine();
-                string reverted = "";
-                for (int i = input.Length - 1; i >= 0; i--){
-                    reverted += input[i];
+            case 2:
+                {
+                    planetName = "Venus";
+                    break;
                 }
-                Console.WriteLine(reverted);
-                break;
-            }
-            case "check":
-            {
-                Console.Write("Enter input: ");
-                string input = Console.ReadLine();
-                Console.WriteLine(input.StartsWith("TEST"));
-                break;
-            }
-            default:
-            {
-                Console.WriteLine("unknown command: {0}", command);
-                break;
-            }
+            case 3:
+                {
+                    planetName = "Earth";
+                    break;
+                }
+            case 4:
+                {
+                    planetName = "Mars";
+                    break;
+                }
+            case 5:
+                {
+                    planetName = "Jupiter";
+                    break;
+                }
+            case 6:
+                {
+                    planetName = "Saturn";
+                    break;
+                }
+            case 7:
+                {
+                    planetName = "Uranus";
+                    break;
+                }
+            case 8:
+                {
+                    planetName = "Neptune";
+                    break;
+                }
+            case 9:
+                {
+                    planetName = "Pluto";
+                    break;
+                }
+        }
+        int lastLength = planetNames.Length;
+        Array.Resize(ref planetNames, lastLength + 1);
+        planetNames[lastLength] = planetName;
+    }
+    return planetNames;
+}
 
-            
+    void Application()
+    {
+        Console.WriteLine("start planet name search...");
+        int[] planetPositions = {};
+        foreach (string planetPositionAsString in args)
+        {
+            try
+            {
+                int planetPosition = Convert.ToInt32(planetPositionAsString);
+                if (planetPosition > 0 && planetPosition < 10)
+                {
+                    int lastLength = planetPositions.Length;
+                    Array.Resize(ref planetPositions,  lastLength + 1);
+                    planetPositions[lastLength] = planetPosition;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("{1}: {0}", planetPositionAsString, e.Message);
+            }
+        }
+        string[] planetNames = PlanetsFromPositions(planetPositions);
+        Console.WriteLine("finish planet name search, found planets:");
+        foreach (string planet in planetNames)
+        {
+            Console.WriteLine(planet);
         }
     }
-}
-Application();
+
+    Application();
