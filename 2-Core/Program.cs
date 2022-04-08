@@ -1,25 +1,69 @@
-﻿//Array, eine Liste von Einträgen
-
-string name = "Hugo";
-string[] names = {"Hugo", "Emil", "Fritz"};
-
-Console.WriteLine(name.Length);
-Console.WriteLine(names.Length);
-Console.WriteLine(names[0]);//Konzeptuell: names.0
-Console.WriteLine(names[0].Length);//Konzeptuell: names.0.Length
-//Ausführlicher
-string element0 = names[0];
-int element0Length = element0.Length;
-Console.WriteLine(element0Length);
-
-//Iteration über ein Array
-for (int i = 0; i < names.Length; i++)
+﻿string PlanetFromPosition(int position)
 {
-    Console.WriteLine(names[i]);
+    string planetName = "unknown";
+    if (position > 0 && position <= 9)
+    {
+
+        switch(position)
+        {
+            case 1:
+                {
+                    planetName = "Mercury";
+                    break;
+                }
+            case 2:
+                {
+                    planetName = "Venus";
+                    break;
+                }
+            case 3:
+                {
+                    planetName = "Earth";
+                    break;
+                }
+            case 4:
+                {
+                    planetName = "Mars";
+                    break;
+                }
+            case 5:
+                {
+                    planetName = "Jupiter";
+                    break;
+                }
+            case 6:
+                {
+                    planetName = "Saturn";
+                    break;
+                }
+            case 7:
+                {
+                    planetName = "Uranus";
+                    break; 
+                }
+            case 8:
+                {
+                    planetName = "Neptune";
+                    break;
+                }
+            case 9:
+                {
+                    planetName = "Pluto";
+                    break;
+                }
+        }
+    }
+    return planetName;
 }
 
-foreach (string nameInArray in names)
+void Application()
 {
-    Console.WriteLine(nameInArray);
+    foreach (string planetPoitionAsString in args)
+    {
+        int planetPosition = Convert.ToInt32(planetPoitionAsString);
+        string planetName = PlanetFromPosition(planetPosition);
+        Console.WriteLine("Planet with number {0} is {1}", planetPosition, planetName);
+    }
 }
 
+Application();
