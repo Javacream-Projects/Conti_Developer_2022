@@ -71,9 +71,47 @@ void SimpleStringArrayExample()
 
 }
 
+void StringRefExample(){
+    string value = "initial";
+    Console.WriteLine("Before: {0}", value);
+    StringRefExampleFunction(ref value);
+    Console.WriteLine("After: {0}", value);
+}
 
+void StringRefExampleFunction(ref string s){
+    Console.WriteLine("In StringExampleFunction: {0}", s);
+    s = "changed";
+    Console.WriteLine("In StringExampleFunction after change: {0}", s);
+}
+
+void StringArrayRefExample(){
+    string[] values = {"initial1", "initial2"};
+    foreach(string value in values)
+    {
+        Console.WriteLine("    Before: {0}", value);
+    }
+    StringArrayRefExampleFunction(ref values);
+    foreach(string value in values)
+    {
+        Console.WriteLine("    After: {0}", value);
+    }
+}
+
+void StringArrayRefExampleFunction(ref string[] array){
+    foreach(string s in array)
+    {
+        Console.WriteLine("    In StringArrayExampleFunction: {0}", s);
+    }
+    array = new string[]{"changed1", "changed2"};
+    foreach(string s in array)
+    {
+        Console.WriteLine("    In StringArrayExampleFunction after change: {0}", s);
+    }
+}
 
 //StringExample();
 //StringArrayExample();
 //StringArrayExample2();
-SimpleStringArrayExample();
+//SimpleStringArrayExample();
+//StringRefExample();
+StringArrayRefExample();
