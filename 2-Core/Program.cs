@@ -62,6 +62,7 @@ void Application()
 {
     foreach (string planetPositionAsString in args)
     {
+        Console.WriteLine("start planet name search...");
         try
         {
             int planetPosition = Convert.ToInt32(planetPositionAsString);
@@ -71,6 +72,10 @@ void Application()
         catch (Exception e)
         {
             Console.WriteLine("{1}: {0}", planetPositionAsString, e.Message);
+        }
+        finally
+        {
+            Console.WriteLine("finish planet name search");
         }
     }
 }
