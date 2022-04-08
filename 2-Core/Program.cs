@@ -1,9 +1,6 @@
 ﻿string PlanetFromPosition(int position)
 {
-    string planetName = "unknown";
-    if (position > 0 && position <= 9)
-    {
-
+    string planetName;
         switch(position)
         {
             case 1:
@@ -51,8 +48,13 @@
                     planetName = "Pluto";
                     break;
                 }
+            default:
+                {   
+                    Exception e = new Exception("unknown");//y"unknown"y; y...y als "Exception-Literal
+                    throw e;
+                }
         }
-    }
+
     return planetName;
 }
 
