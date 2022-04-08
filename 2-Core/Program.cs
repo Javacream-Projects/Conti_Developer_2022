@@ -1,83 +1,54 @@
-﻿string PlanetFromPosition(int position)
+﻿void Application()
 {
-    string planetName;
-    switch (position)
+    bool running = true;
+    while(running)
     {
-        case 1:
+        Console.Write("Enter command: ");
+        string command = Console.ReadLine().ToLower();
+        switch(command)
+        {
+            case "split":
             {
-                planetName = "Mercury";
+                Console.Write("Enter input: ");
+                string input = Console.ReadLine();
+                string[] words = input.Split(" ");
+                foreach(string word in words)
+                {
+                    Console.WriteLine(word);
+                }
                 break;
             }
-        case 2:
+            case "exit":
             {
-                planetName = "Venus";
+                running = false;
                 break;
             }
-        case 3:
+            case "reverse":
             {
-                planetName = "Earth";
+                Console.Write("Enter input: ");
+                string input = Console.ReadLine();
+                string reverted = "";
+                for (int i = input.Length - 1; i >= 0; i--){
+                    reverted += input[i];
+                }
+                Console.WriteLine(reverted);
                 break;
             }
-        case 4:
+            case "check":
             {
-                planetName = "Mars";
+                Console.Write("Enter input: ");
+                string input = Console.ReadLine();
+                Console.WriteLine(input.StartsWith("TEST"));
                 break;
             }
-        case 5:
+            default:
             {
-                planetName = "Jupiter";
+                Console.WriteLine("unknown command: {0}", command);
                 break;
             }
-        case 6:
-            {
-                planetName = "Saturn";
-                break;
-            }
-        case 7:
-            {
-                planetName = "Uranus";
-                break;
-            }
-        case 8:
-            {
-                planetName = "Neptune";
-                break;
-            }
-        case 9:
-            {
-                planetName = "Pluto";
-                break;
-            }
-        default:
-            {
-                Exception e = new Exception("Unknown planet position");//y"unknown"y; y...y als "Exception-Literal
-                throw e;
-            }
-    }
 
-    return planetName;
-}
-
-void Application()
-{
-    foreach (string planetPositionAsString in args)
-    {
-        Console.WriteLine("start planet name search...");
-        try
-        {
-            int planetPosition = Convert.ToInt32(planetPositionAsString);
-            string planetName = PlanetFromPosition(planetPosition);
-            Console.WriteLine("Planet with number {0} is {1}", planetPosition, planetName);
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("{1}: {0}", planetPositionAsString, e.Message);
-        }
-        finally
-        {
-            Console.WriteLine("finish planet name search");
+            
         }
     }
 }
-
 Application();
