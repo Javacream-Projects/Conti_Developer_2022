@@ -21,6 +21,18 @@ namespace People{
         private Person partner;
 
         public string marry(Person partner){
+            if (partner == null){
+                return "Failed, partner was null";
+            }
+            if (partner == this){
+                return "Failed, you cannot marry yourself";
+            }
+            if (partner.partner != null){
+                return "Failed, partner is married";
+            }
+            if (this.partner != null){
+                return "Failed, you are married";
+            }
             this.partner = partner;
             partner.partner = this;
             return "OK";
