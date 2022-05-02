@@ -1,13 +1,19 @@
 namespace People{
-    class Person{
-        string lastname;
-        string firstname;
-        int height;
-        char gender;
+    public class Person{
+        public string lastname{get;set;}
+        public string firstname{get;}
+        public int height{get;}
+        public char gender{get;set;}
 
-        string sayHello(){
+        public string sayHello(){
             return "Hello";
         }
-
+        public Person(string ln, string fn, int h, char g){
+            Console.WriteLine("a person is created");
+            lastname = ln;
+            firstname = fn;
+            height = h;
+            gender = g;
+        }
     }
 }
