@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/Books/bin/Debug/net6.0/Books.dll",
+            "program": "${workspaceFolder}/People/bin/Debug/net6.0/People.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/Books",
+            "cwd": "${workspaceFolder}/People",
             "console": "internalConsole",
             "stopAtEntry": false
         },
