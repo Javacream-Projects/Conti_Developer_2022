@@ -6,14 +6,17 @@ namespace People{
         public char Gender{get;set;}
 
         public string SayHello(){
-            return "Hello";
+            //Innerhalb einer Methode existiert die implizite Variable "this"
+            //sawitzki.SayHello -> this = sawitzki
+            return "Hello, my name is " + this.Lastname;
+            //return "Hello, my name is " + Lastname;//Der Compiler ergänzt hier this.
         }
-        public Person(string ln, string fn, int h, char g){
+        public Person(string Lastname, string Firstname, int Height, char Gender){
             Console.WriteLine("a person is created");
-            Lastname = ln;
-            Firstname = fn;
-            Height = h;
-            Gender = g;
+            this.Lastname = Lastname;
+            this.Firstname = Firstname;
+            this.Height = Height;
+            this.Gender = Gender;
         }
     }
 }
