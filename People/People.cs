@@ -18,5 +18,12 @@ namespace People{
             this.Height = Height;
             this.Gender = Gender;
         }
+        private Person partner;
+
+        public string marry(Person partner){
+            this.partner = partner;
+            partner.partner = this;
+            return "OK";
+        }
     }
 }
