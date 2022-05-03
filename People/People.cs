@@ -1,4 +1,7 @@
 namespace People{
+    enum Gender{
+        Male, Female, Diverse
+    }
     public class Person{
 
         public static int PeopleCounter {get; private set;} = 0;
