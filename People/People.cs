@@ -1,4 +1,5 @@
-namespace People{
+using Javacream.Util;
+namespace Javacream.People{
     public enum Gender{
         Male, Female, Diverse
     }
@@ -69,5 +70,7 @@ namespace People{
             this.partner.partner = null;
             this.partner = null;
         }
+
+        public Address? address {get; set;}
     }
 }
