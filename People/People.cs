@@ -20,7 +20,7 @@ namespace People{
         }
         private Person? partner;
 
-        public string marry(Person? partner){
+        public string Marry(Person? partner){
             if (partner == null){
                 return "marry failed: partner was null";
             }
@@ -38,7 +38,7 @@ namespace People{
             return "marry OK";
         }
 
-        public string divorce(){
+        public string Divorce(){
             if (this.partner == null){
                 return "Divorce failed: you are not married!";
             }

@@ -4,16 +4,20 @@ Person mustermann = new Person("Mustermann", "Hannah", 188, 'f');
 Person meier = new Person("Meier", "Johann", 168, 'd');
 
 
-Console.WriteLine(sawitzki.marry(null));
-Console.WriteLine(sawitzki.marry(sawitzki));
-Console.WriteLine(sawitzki.marry(mustermann));
-Console.WriteLine(meier.marry(mustermann));
-Console.WriteLine(mustermann.marry(meier));
+Console.WriteLine(sawitzki.Marry(null));
+Console.WriteLine(sawitzki.Marry(sawitzki));
+Console.WriteLine(sawitzki.Marry(mustermann));
+Console.WriteLine(meier.Marry(mustermann));
+Console.WriteLine(mustermann.Marry(meier));
 Console.WriteLine("finish marriage");
 
-Console.WriteLine(meier.divorce());
-Console.WriteLine(sawitzki.divorce());
-Console.WriteLine(mustermann.marry(meier));
+Console.WriteLine(meier.Divorce());
+Console.WriteLine(sawitzki.Divorce());
+Console.WriteLine(mustermann.Marry(meier));
 
 Console.WriteLine("finish divorce");
+
+meier.Lastname = "Schneider";
+Console.WriteLine(meier.Lastname);
+
 
