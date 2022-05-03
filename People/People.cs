@@ -1,7 +1,7 @@
 namespace People{
     public class Person{
 
-        public static int PeopleCounter {get;set;} = 0;
+        public static int PeopleCounter {get; private set;} = 0;
         public string Lastname{get;set;}
         public string Firstname{get;}
         public int Height{get;}

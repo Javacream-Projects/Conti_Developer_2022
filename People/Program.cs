@@ -1,4 +1,6 @@
 ﻿using People;
+using System; //System-Namespace wird automatisch immer benutzt
+//Person.PeopleCounter = -5; //Compiler-Fehler, setter für PeopleCounter ist private
 Person sawitzki = new Person("Sawitzki", "Rainer", 183, 'm');
 Console.WriteLine(Person.PeopleCounter);
 Person mustermann = new Person("Mustermann", "Hannah", 188, 'f');
