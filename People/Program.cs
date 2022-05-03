@@ -1,7 +1,10 @@
 ﻿using People;
 Person sawitzki = new Person("Sawitzki", "Rainer", 183, 'm');
+Console.WriteLine(Person.PeopleCounter);
 Person mustermann = new Person("Mustermann", "Hannah", 188, 'f');
+Console.WriteLine(Person.PeopleCounter);
 Person meier = new Person("Meier", "Johann", 168, 'd');
+Console.WriteLine(Person.PeopleCounter);
 
 
 Console.WriteLine(sawitzki.Marry(null));

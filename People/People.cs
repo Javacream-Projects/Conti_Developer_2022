@@ -1,5 +1,7 @@
 namespace People{
     public class Person{
+
+        public static int PeopleCounter {get;set;} = 0;
         public string Lastname{get;set;}
         public string Firstname{get;}
         public int Height{get;}
@@ -12,11 +14,11 @@ namespace People{
             //return "Hello, my name is " + Lastname;//Der Compiler ergänzt hier this.
         }
         public Person(string Lastname, string Firstname, int Height, char Gender){
-            Console.WriteLine("a person is created");
             this.Lastname = Lastname;
             this.Firstname = Firstname;
             this.Height = Height;
             this.Gender = Gender;
+            Person.PeopleCounter++;
         }
         private Person? partner;
 
