@@ -9,9 +9,11 @@ Console.WriteLine(sawitzki.marry(sawitzki));
 Console.WriteLine(sawitzki.marry(mustermann));
 Console.WriteLine(meier.marry(mustermann));
 Console.WriteLine(mustermann.marry(meier));
-Console.WriteLine("finish");
+Console.WriteLine("finish marriage");
 
 Console.WriteLine(meier.divorce());
 Console.WriteLine(sawitzki.divorce());
 Console.WriteLine(mustermann.marry(meier));
+
+Console.WriteLine("finish divorce");
 
