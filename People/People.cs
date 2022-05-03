@@ -1,5 +1,5 @@
 namespace People{
-    enum Gender{
+    public enum Gender{
         Male, Female, Diverse
     }
     public class Person{
@@ -8,10 +8,10 @@ namespace People{
         private string? _Lastname;
         public string Lastname{
             get {
-                return _Lastname;
+                return _Lastname!.ToUpper();
             }
             set {
-                if (value.Length > 0){
+                if (value.Length > 0 && value.Length < 32){
                     _Lastname = value;
                 }
             }
@@ -25,7 +25,7 @@ namespace People{
 
         public string Firstname{get;}
         public int Height{get;}
-        public char Gender{get;set;}
+        public Gender Gender{get;set;}
 
         public string SayHello(){
             //Innerhalb einer Methode existiert die implizite Variable "this"
@@ -33,7 +33,7 @@ namespace People{
             return "Hello, my name is " + this.Lastname;
             //return "Hello, my name is " + Lastname;//Der Compiler ergänzt hier this.
         }
-        public Person(string Lastname, string Firstname, int Height, char Gender){
+        public Person(string Lastname, string Firstname, int Height, Gender Gender){
             this.Lastname = Lastname;
             this.Firstname = Firstname;
             this.Height = Height;
