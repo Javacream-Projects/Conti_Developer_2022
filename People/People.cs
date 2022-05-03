@@ -18,24 +18,33 @@ namespace People{
             this.Height = Height;
             this.Gender = Gender;
         }
-        private Person partner;
+        private Person? partner;
 
-        public string marry(Person partner){
+        public string marry(Person? partner){
             if (partner == null){
-                return "Failed, partner was null";
+                return "marry failed: partner was null";
             }
             if (partner == this){
-                return "Failed, you cannot marry yourself";
+                return "marry failed: you cannot marry yourself";
             }
             if (partner.partner != null){
-                return "Failed, partner is married";
+                return "marry failed: partner is married";
             }
             if (this.partner != null){
-                return "Failed, you are married";
+                return "marry failed: you are married";
             }
             this.partner = partner;
             partner.partner = this;
-            return "OK";
+            return "marry OK";
+        }
+
+        public string divorce(){
+            if (this.partner == null){
+                return "Divorce failed: you are not married!";
+            }
+            this.partner.partner = null;
+            this.partner = null;
+            return "divorce OK";
         }
     }
 }
