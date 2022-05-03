@@ -13,6 +13,9 @@ namespace People{
             set {
                 if (value.Length > 0 && value.Length < 32){
                     _Lastname = value;
+                }else{
+                    Exception e = new Exception("Validation Error: ...");
+                    throw e;
                 }
             }
         }
@@ -42,31 +45,29 @@ namespace People{
         }
         private Person? partner;
 
-        public string Marry(Person? partner){
+        public void Marry(Person? partner){
             if (partner == null){
-                return "marry failed: partner was null";
+                throw new Exception("marry failed: partner was null");
             }
             if (partner == this){
-                return "marry failed: you cannot marry yourself";
+                throw new Exception("marry failed: you cannot marry yourself");
             }
             if (partner.partner != null){
-                return "marry failed: partner is married";
+                throw new Exception("marry failed: partner is married");
             }
             if (this.partner != null){
-                return "marry failed: you are married";
+                throw new Exception("marry failed: you are married");
             }
             this.partner = partner;
             partner.partner = this;
-            return "marry OK";
         }
 
-        public string Divorce(){
+        public void Divorce(){
             if (this.partner == null){
-                return "Divorce failed: you are not married!";
+                throw new Exception("Divorce failed: you are not married!");
             }
             this.partner.partner = null;
             this.partner = null;
-            return "divorce OK";
         }
     }
 }

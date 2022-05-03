@@ -9,20 +9,46 @@ Person meier = new Person("Meier", "Johann", 168, Gender.Diverse);
 Console.WriteLine(Person.PeopleCounter);
 
 
-Console.WriteLine(sawitzki.Marry(null));
-Console.WriteLine(sawitzki.Marry(sawitzki));
-Console.WriteLine(sawitzki.Marry(mustermann));
-Console.WriteLine(meier.Marry(mustermann));
-Console.WriteLine(mustermann.Marry(meier));
+try{
+    sawitzki.Marry(null);
+}
+catch(Exception e){
+    Console.WriteLine(e.Message);
+}
+try{
+    sawitzki.Marry(sawitzki);
+}
+catch(Exception e){
+    Console.WriteLine(e.Message);
+}
+sawitzki.Marry(mustermann);
+try{
+
+    meier.Marry(mustermann);
+}
+catch(Exception e){
+    Console.WriteLine(e.Message);
+}
+try{
+    mustermann.Marry(meier);
+}
+catch(Exception e){
+    Console.WriteLine(e.Message);
+}
 Console.WriteLine("finish marriage");
 
-Console.WriteLine(meier.Divorce());
-Console.WriteLine(sawitzki.Divorce());
-Console.WriteLine(mustermann.Marry(meier));
+try{
+    meier.Divorce();
+}
+catch(Exception e){
+    Console.WriteLine(e.Message);
+}
+sawitzki.Divorce();
+mustermann.Marry(meier);
 
 Console.WriteLine("finish divorce");
 
-meier.Lastname = "Schneider";
+meier.Lastname = "";
 Console.WriteLine(meier.Lastname);
 
 
