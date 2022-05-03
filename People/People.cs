@@ -2,7 +2,15 @@ namespace People{
     public class Person{
 
         public static int PeopleCounter {get; private set;} = 0;
-        public string Lastname{get;set;}
+        private string _Lastname;
+        public string Lastname{
+            get {
+                return _Lastname;
+            }
+            set {
+                _Lastname = value;
+            }
+        }
         public string Firstname{get;}
         public int Height{get;}
         public char Gender{get;set;}
