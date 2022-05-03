@@ -2,15 +2,24 @@ namespace People{
     public class Person{
 
         public static int PeopleCounter {get; private set;} = 0;
-        private string _Lastname;
+        private string? _Lastname;
         public string Lastname{
             get {
                 return _Lastname;
             }
             set {
-                _Lastname = value;
+                if (value.Length > 0){
+                    _Lastname = value;
+                }
             }
         }
+
+        public string Name{
+            get {
+                return Firstname + " " + Lastname;
+            }
+        }
+
         public string Firstname{get;}
         public int Height{get;}
         public char Gender{get;set;}
