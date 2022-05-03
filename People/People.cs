@@ -3,7 +3,7 @@ namespace Javacream.People{
     public enum Gender{
         Male, Female, Diverse
     }
-    public class Person{
+    public class Person : Object{ //"Person extends Object", implizit immer der Fall
 
         public static int PeopleCounter {get; private set;} = 0;
         private string? _Lastname;
@@ -73,4 +73,9 @@ namespace Javacream.People{
 
         public Address address {get;set;}
     }
+/* Cliffhanger für Tag 3
+    public class Student : Person{
+
+    }
+*/
 }
