@@ -1,7 +1,7 @@
 namespace Javacream.Util{
-    public class Address{
+    public struct Address{
         public string City {get; set;}
-        public string Street {get; set;}
+        public string Street;
         public int PostalCode {get; set;}
         public Address(int postalCode, string city, string street){
             this.PostalCode = postalCode;
