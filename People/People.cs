@@ -71,6 +71,6 @@ namespace Javacream.People{
             this.partner = null;
         }
 
-        public Address? address {get; set;}
+        public Address address {get;set;}
     }
 }

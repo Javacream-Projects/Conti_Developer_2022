@@ -13,6 +13,7 @@ mustermann.address = a1;
 meier.address=a2;
 //Addressänderung: Zuweisung
 meier.address = new Address(40444, "Hamburg", "Reeperbahn");
-a1.Street="Karlsplatz";
+Address a = sawitzki.address;
+a.Street="Karlsplatz";
 Person p = sawitzki; //Keine Kopie von Sawitzki, sondern einer Zuweisung der Referenz
 Console.WriteLine("finished");
