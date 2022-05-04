@@ -89,7 +89,7 @@ namespace Javacream.People{
              this.Company = Company;
          }
 
-         public void work(){
+         public void Work(){
              Console.WriteLine("i am working at " + this.Company);
          }
 
