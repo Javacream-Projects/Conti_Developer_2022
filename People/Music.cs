@@ -37,12 +37,12 @@ namespace Javacream.Music
     }
 public class Band
 {
-            public Band(Instrument[] i)
+            public Band()
             {
-                this.Instruments = i;
+                this.Instruments = new List<Instrument>();
             }
 
-    public Instrument[] Instruments { get; set; }
+    private List<Instrument> Instruments;
     public void Play()
     {
         foreach (Instrument i in Instruments)
@@ -50,4 +50,11 @@ public class Band
             Console.WriteLine(i.MakeSound());
         }
     }
-}}
+    public void AddInstrument(Instrument i){
+        this.Instruments.Add(i);
+    }
+    public void RemoveInstrument(Instrument i){
+        this.Instruments.Remove(i);
+    }
+}
+}
