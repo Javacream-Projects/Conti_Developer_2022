@@ -32,7 +32,7 @@ namespace Javacream.People{
         public int Height{get;}
         public Gender Gender{get;set;}
 
-        public string SayHello(){
+        public virtual string SayHello(){
             //Innerhalb einer Methode existiert die implizite Variable "this"
             //sawitzki.SayHello -> this = sawitzki
             return "Hello, my name is " + this.Lastname;
@@ -85,7 +85,7 @@ namespace Javacream.People{
              Console.WriteLine("i am studying at " + this.University);
          }
 
-         public string SayHello(){
+         public override string SayHello(){
              string likeAPerson = base.SayHello();
              return likeAPerson + ", i study at " + this.University;
          }
@@ -100,7 +100,7 @@ namespace Javacream.People{
          public void Work(){
              Console.WriteLine("i am working at " + this.Company);
          }
-         public string SayHello(){
+         public new string SayHello(){
              string likeAPerson = base.SayHello();
              return likeAPerson + ", i work at " + this.Company;
          }
