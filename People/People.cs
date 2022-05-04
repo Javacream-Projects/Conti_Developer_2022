@@ -85,8 +85,8 @@ namespace Javacream.People{
              Console.WriteLine("i am studying at " + this.University);
          }
 
-         public string sayHelloLikeAStudent(){
-             string likeAPerson = SayHello();
+         public string SayHello(){
+             string likeAPerson = base.SayHello();
              return likeAPerson + ", i study at " + this.University;
          }
 
@@ -100,8 +100,8 @@ namespace Javacream.People{
          public void Work(){
              Console.WriteLine("i am working at " + this.Company);
          }
-         public string sayHelloLikeAWorker(){
-             string likeAPerson = SayHello();
+         public string SayHello(){
+             string likeAPerson = base.SayHello();
              return likeAPerson + ", i work at " + this.Company;
          }
 
