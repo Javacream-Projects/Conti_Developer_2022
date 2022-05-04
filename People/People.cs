@@ -74,8 +74,26 @@ namespace Javacream.People{
         public Address address {get;set;}
     }
     public class Student : Person{
-         public Student(string Lastname, string Firstname, int Height, Gender Gender) : base(Lastname, Firstname, Height, Gender) {
+         public Student(string Lastname, string Firstname, int Height, Gender Gender, string University) : base(Lastname, Firstname, Height, Gender) {
+             this.University = University;
          }
+
+         public void Study(){
+             Console.WriteLine("i am studying at " + this.University);
+         }
+
+         public string University {get; set;}
+   }
+    public class Worker : Person{
+         public Worker(string Lastname, string Firstname, int Height, Gender Gender, string Company) : base(Lastname, Firstname, Height, Gender) {
+             this.Company = Company;
+         }
+
+         public void work(){
+             Console.WriteLine("i am working at " + this.Company);
+         }
+
+         public string Company {get; set;}
    }
     
 }
