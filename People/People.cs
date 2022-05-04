@@ -73,9 +73,9 @@ namespace Javacream.People{
 
         public Address address {get;set;}
     }
-/* Cliffhanger für Tag 3
     public class Student : Person{
-
-    }
-*/
+         public Student(string Lastname, string Firstname, int Height, Gender Gender) : base(Lastname, Firstname, Height, Gender) {
+         }
+   }
+    
 }
