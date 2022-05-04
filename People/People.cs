@@ -100,7 +100,7 @@ namespace Javacream.People{
          public void Work(){
              Console.WriteLine("i am working at " + this.Company);
          }
-         public new string SayHello(){
+         public override string SayHello(){
              string likeAPerson = base.SayHello();
              return likeAPerson + ", i work at " + this.Company;
          }
