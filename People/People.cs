@@ -6,7 +6,8 @@ namespace Javacream.People{
     public class Person : Object{ //"Person extends Object", implizit immer der Fall
 
         public static int PeopleCounter {get; private set;} = 0;
-        private string? _Lastname;
+        //private
+         protected string? _Lastname;
         public string Lastname{
             get {
                 return _Lastname!.ToUpper();
@@ -79,6 +80,8 @@ namespace Javacream.People{
          }
 
          public void Study(){
+             //this.Firstname = "Albert"; //Compiler-Fehler, auch aus der Subklasse heraus nicht schreibbar
+             string? l = this._Lastname; //Geht nicht, falls _Lastname in Person private. protected erlaubt den Zugriff
              Console.WriteLine("i am studying at " + this.University);
          }
 
