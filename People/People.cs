@@ -85,6 +85,11 @@ namespace Javacream.People{
              Console.WriteLine("i am studying at " + this.University);
          }
 
+         public string sayHelloLikeAStudent(){
+             string likeAPerson = SayHello();
+             return likeAPerson + ", i study at " + this.University;
+         }
+
          public string University {get; set;}
    }
     public class Worker : Person{
@@ -94,6 +99,10 @@ namespace Javacream.People{
 
          public void Work(){
              Console.WriteLine("i am working at " + this.Company);
+         }
+         public string sayHelloLikeAWorker(){
+             string likeAPerson = SayHello();
+             return likeAPerson + ", i work at " + this.Company;
          }
 
          public string Company {get; set;}
