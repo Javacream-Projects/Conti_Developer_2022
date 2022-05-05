@@ -1,5 +1,28 @@
 namespace Javacream.Books{
 
+    public class Publisher{
+        string Name {get;}
+        private List<Book> _books;
+
+        public Publisher(string name){
+            this.Name = name;
+            _books = new List<Book>();
+        }
+
+        public void AddBook(Book book){
+
+        }
+        public void RemoveBook(Book book){
+
+        }
+        public void ClearBooks(){
+
+        }
+        public List<Book> GetAllBooks(){
+            
+        }
+
+    }
     public class Isbn{
         private int _part1;
         private int _part2;
