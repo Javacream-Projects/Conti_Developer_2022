@@ -1,5 +1,25 @@
 namespace Javacream.Books{
 
+    public class Isbn{
+        private int _part1;
+        private int _part2;
+        private int _part3;
+        private int _part4;
+
+        public Isbn(int p1, int p2, int p3, int p4){
+            this._part1 = p1;
+            this._part2 = p2;
+            this._part3 = p3;
+            this._part4 = p4;
+
+        }
+
+        public override string ToString(){
+            string isbnAsString = "ISBN:" + _part1 + "-" + _part2 + "-" + _part3 + "-" + _part4; 
+            return isbnAsString;
+        }
+
+    }
     public class BooksService{
         private Dictionary<string, Book> _books = new Dictionary<string, Book>();
         public Book CreateBook(string isbn, string title, int pages, double price, bool available, Dictionary<string, Object> options){
