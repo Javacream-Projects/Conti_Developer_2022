@@ -12,7 +12,7 @@
             "program": "${workspaceFolder}/People/bin/Debug/net6.0/People.dll",
             "args": [],
             "cwd": "${workspaceFolder}/People",
-            "console": "internalConsole",
+            "console": "integratedTerminal",
             "stopAtEntry": false
         },
         {

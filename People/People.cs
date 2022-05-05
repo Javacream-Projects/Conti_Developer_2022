@@ -1,4 +1,5 @@
 using Javacream.Util;
+using Javacream.BusinessObjects;
 namespace Javacream.People{
     public enum Gender{
         Male, Female, Diverse
@@ -75,7 +76,7 @@ namespace Javacream.People{
         public Address address {get;set;}
     }
     public class Student : Person{
-         public Student(string Lastname, string Firstname, int Height, Gender Gender, string University) : base(Lastname, Firstname, Height, Gender) {
+         public Student(string Lastname, string Firstname, int Height, Gender Gender, University University) : base(Lastname, Firstname, Height, Gender) {
              this.University = University;
          }
 
@@ -87,25 +88,25 @@ namespace Javacream.People{
 
          public override string SayHello(){
              string likeAPerson = base.SayHello();
-             return likeAPerson + ", i study at " + this.University;
+             return likeAPerson + ", i study at " + this.University.Name;
          }
 
-         public string University {get; set;}
+         public University University {get; set;}
    }
     public class Worker : Person{
-         public Worker(string Lastname, string Firstname, int Height, Gender Gender, string Company) : base(Lastname, Firstname, Height, Gender) {
+         public Worker(string Lastname, string Firstname, int Height, Gender Gender, Company Company) : base(Lastname, Firstname, Height, Gender) {
              this.Company = Company;
          }
 
          public void Work(){
-             Console.WriteLine("i am working at " + this.Company);
+             Console.WriteLine("i am working at " + this.Company.CompanyName);
          }
          public override string SayHello(){
              string likeAPerson = base.SayHello();
-             return likeAPerson + ", i work at " + this.Company;
+             return likeAPerson + ", i work at " + this.Company.CompanyName;
          }
 
-         public string Company {get; set;}
+         public Company Company {get; set;}
    }
     
 }
