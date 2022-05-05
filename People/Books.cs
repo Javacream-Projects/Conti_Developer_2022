@@ -22,7 +22,7 @@ namespace Javacream.Books{
     }
     public class BooksService{
         private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
-        public Book CreateBook(Isbn isbn, string title, int pages, double price, bool available, Dictionary<Isbn, Object> options){
+        public Book CreateBook(Isbn isbn, string title, int pages, double price, bool available, Dictionary<string, Object> options){
             Book newBook;
             try{
                 string topic = options["topic"].ToString();
@@ -42,10 +42,10 @@ namespace Javacream.Books{
             return newBook;
         }
 
-        public Book FindBookByIsbn(string isbn){
+        public Book FindBookByIsbn(Isbn isbn){
             return this._books[isbn];
         }
-        public void DeleteBookByIsbn(string isbn){
+        public void DeleteBookByIsbn(Isbn isbn){
             this._books.Remove(isbn);
         }
 

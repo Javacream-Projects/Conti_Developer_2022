@@ -73,13 +73,13 @@ public static class Application{
     }
 
 public static Book CreateDefaultBook(){
-    return new Book("ISBN-1", "Title 1", 100, 19.99, true);
+    return new Book(new Isbn(1,2,3,4), "Title 1", 100, 19.99, true);
 }
 public static SchoolBook CreateDefaultSchoolBook(){
-    return new SchoolBook("ISBN-1", "Title 2", 120, 29.99, true, 10, "physics");
+    return new SchoolBook(new Isbn(1,2,3,5), "Title 2", 120, 29.99, true, 10, "physics");
 }
 public static SpecialistBook CreateDefaultSpecialistBook(){
-    return new SpecialistBook("ISBN-1", "Title 3", 200, 9.99, true, "gardening");
+    return new SpecialistBook(new Isbn(1,2,3,6), "Title 3", 200, 9.99, true, "gardening");
 }
     public static void TestBooks(){
         Book book = CreateDefaultBook();
@@ -98,10 +98,11 @@ public static SpecialistBook CreateDefaultSpecialistBook(){
         school.Add("subject", "sports");
         Dictionary<string, Object> specialist = new Dictionary<string, Object>();
         specialist.Add("topic", "gardening");
-        Console.WriteLine(booksService.CreateBook("ISBN1", "Title1", 120, 29.99, true, empty).Info());
-        Console.WriteLine(booksService.CreateBook("ISBN2", "Title2", 130, 19.99, true, school).Info());
-        Console.WriteLine(booksService.CreateBook("ISBN3", "Title3", 110, 9.99, true, specialist).Info());
-        Console.WriteLine(booksService.FindBookByIsbn("ISBN3").Info());
+        Console.WriteLine(booksService.CreateBook(new Isbn(1,2,3,4), "Title1", 120, 29.99, true, empty).Info());
+        Console.WriteLine(booksService.CreateBook(new Isbn(1,2,3,5), "Title2", 130, 19.99, true, school).Info());
+        Isbn isbn3 = new Isbn(1,2,3,6);
+        Console.WriteLine(booksService.CreateBook(isbn3, "Title3", 110, 9.99, true, specialist).Info());
+        Console.WriteLine(booksService.FindBookByIsbn(isbn3).Info());
 
 
 
