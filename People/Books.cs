@@ -22,7 +22,7 @@ namespace Javacream.Books{
     }
     public class BooksService{
         private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
-        public Book CreateBook(Isbn isbn, string title, int pages, double price, bool available, Dictionary<string, Object> options){
+        public Book CreateBook(Isbn isbn, string title, int pages, double price, bool available, Dictionary<Isbn, Object> options){
             Book newBook;
             try{
                 string topic = options["topic"].ToString();
@@ -106,7 +106,7 @@ namespace Javacream.Books{
         }
 
         public virtual string Info(){
-            return "Book: isbn=" + Isbn + ", title=" + Title + ", pages=" + Pages + ", price=" + Price + ", available=" + Available;
+            return "Book: isbn=" + Isbn.ToString() + ", title=" + Title + ", pages=" + Pages + ", price=" + Price + ", available=" + Available;
         }
     }
 
