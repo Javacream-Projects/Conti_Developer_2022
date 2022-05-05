@@ -21,8 +21,8 @@ namespace Javacream.Books{
 
     }
     public class BooksService{
-        private Dictionary<string, Book> _books = new Dictionary<string, Book>();
-        public Book CreateBook(string isbn, string title, int pages, double price, bool available, Dictionary<string, Object> options){
+        private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
+        public Book CreateBook(Isbn isbn, string title, int pages, double price, bool available, Dictionary<string, Object> options){
             Book newBook;
             try{
                 string topic = options["topic"].ToString();
@@ -51,7 +51,7 @@ namespace Javacream.Books{
 
     }
     public class Book{
-        public string Isbn {get;}
+        public Isbn Isbn {get;}
         private string _title;
         public string Title{
             get{
@@ -97,7 +97,7 @@ namespace Javacream.Books{
             }
         }
 
-        public Book(string isbn, string title, int pages, double price, bool available){
+        public Book(Isbn isbn, string title, int pages, double price, bool available){
             this.Isbn = isbn;
             this.Title = title;
             this.Pages = pages;
@@ -114,7 +114,7 @@ namespace Javacream.Books{
         public int Year{get;}
         public string Subject{get;}
 
-        public SchoolBook(string isbn, string title, int pages, double price, bool available, int year, string subject):base(isbn, title, pages, price, available){
+        public SchoolBook(Isbn isbn, string title, int pages, double price, bool available, int year, string subject):base(isbn, title, pages, price, available){
             this.Year = year;
             this.Subject = subject;
         }
@@ -127,7 +127,7 @@ namespace Javacream.Books{
     public class SpecialistBook : Book{
         public string Topic{get;}
 
-        public SpecialistBook(string isbn, string title, int pages, double price, bool available, string topic):base(isbn, title, pages, price, available){
+        public SpecialistBook(Isbn isbn, string title, int pages, double price, bool available, string topic):base(isbn, title, pages, price, available){
             this.Topic = topic;
         }
         public override string Info(){
