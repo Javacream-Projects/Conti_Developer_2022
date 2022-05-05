@@ -10,6 +10,31 @@ namespace Javacream.Util{
         }
     }
 
+    public interface IAddressable{
+        public Address GetAddressInfo();
+    }
+    public class AddressBook{
+        private Dictionary<Address, List<IAddressable>> _book = new Dictionary<Address, List<IAddressable>>();
+        /*
+        //Potenziell sind hier Fehler möglich
+        //Ich kann für eine falsche Adresse als ersten Parameter mitgeben
+        //Das übergebene Objekt muss ja gar keine Address-Information enthalten
+        public void AddAddressable(Address address, Object obj){
+            this._book.Add(address, obj);
+        } */
+
+        public void AddAddressable(IAddressable addressable){
+            Address address = addressable.GetAddressInfo();
+            List<IAddressable> addressableList = this._book[address];
+            if (addressableList == null){
+                addressableList = new List<IAddressable>();
+                this._book.Add(address, addressableList);
+            }
+            addressableList.Add(addressable);
+            
+        }
+    }
+
     public static class TypeHelper{ //Eine static class darf nur static Elemente enthalten. Für solche Helper natürlich durchaus sinnvoll. Ach ja: Console ist auch eine static class
         public static void PrintTypes(Object o){
             string tab = "";

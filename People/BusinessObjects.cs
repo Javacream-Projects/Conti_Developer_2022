@@ -1,6 +1,11 @@
 using Javacream.Util;
 namespace Javacream.BusinessObjects{
-    public class University{
+    public class University : IAddressable{
+
+        public  Address GetAddressInfo()
+        {
+            return this.Address;
+        }
         public string Name {get;}
         public Address Address {get;set;}
 
@@ -10,7 +15,12 @@ namespace Javacream.BusinessObjects{
         } 
     }
 
-    public class Company{
+    public class Company : IAddressable{
+
+        public Address GetAddressInfo()
+        {
+            return this.MainAddress;
+        }
         public string CompanyName {get; set;}
         private Dictionary<string, Address> addresses;
         public Company (string companyName, Address mainAddress){

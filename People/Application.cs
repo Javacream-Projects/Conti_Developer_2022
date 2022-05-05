@@ -45,5 +45,16 @@ public static class Application{
         Worker w = Application.CreateDefaultWorker();
         Console.WriteLine("Debug to check people!");
     }
+    public static void TestAddressBook(){
+        AddressBook addressBook = new AddressBook();
+        Company c = CreateDefaultCompany();
+        Person p = Application.CreateDefaultPerson();
+        Student s = Application.CreateDefaultStudent();
+        addressBook.AddAddressable(c);
+        addressBook.AddAddressable(p);
+        addressBook.AddAddressable(s);
+
+
+    }
 
 }

@@ -1,8 +1,12 @@
 ﻿using Javacream.People;
 while(true){
-Console.Write("enter a test (c, u, p) or x for exit:");    
+Console.Write("enter a test (c, u, p, a) or x for exit:");    
 string test = Console.ReadLine();
 switch (test){
+    case "a": {
+        Application.TestAddressBook();
+        break;
+    }
     case "c": {
         Application.TestCompany();
         break;
