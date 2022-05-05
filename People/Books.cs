@@ -10,16 +10,17 @@ namespace Javacream.Books{
         }
 
         public void AddBook(Book book){
-
+            this._books.Add(book);
         }
         public void RemoveBook(Book book){
+            this._books.Remove(book);
 
         }
         public void ClearBooks(){
-
+            this._books.Clear();
         }
         public List<Book> GetAllBooks(){
-            
+            return this._books;
         }
 
     }
