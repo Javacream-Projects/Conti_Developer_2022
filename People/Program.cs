@@ -3,6 +3,10 @@ while(true){
 Console.Write("enter a test (s, c, u, p, a) or x for exit:");    
 string test = Console.ReadLine();
 switch (test){
+    case "b": {
+        Application.TestBooks();
+        break;
+    }
     case "s": {
         Application.TestSound();
         break;

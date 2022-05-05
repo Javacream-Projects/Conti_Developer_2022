@@ -2,6 +2,7 @@ using Javacream.Util;
 using Javacream.People;
 using Javacream.BusinessObjects;
 using Javacream.Music;
+using Javacream.Books;
 
 public static class Application{
     public static University CreateDefaultUniversity(){
@@ -69,5 +70,24 @@ public static class Application{
         band.AddSoundGenerator(drum);
         band.AddSoundGenerator(CreateDefaultPerson());
         band.Play();        
+    }
+
+public static Book CreateDefaultBook(){
+    return new Book("ISBN-1", "Title 1", 100, 19.99, true);
+}
+public static SchoolBook CreateDefaultSchoolBook(){
+    return new SchoolBook("ISBN-1", "Title 2", 120, 29.99, true, 10, "physics");
+}
+public static SpecialistBook CreateDefaultSpecialistBook(){
+    return new SpecialistBook("ISBN-1", "Title 3", 200, 9.99, true, "gardening");
+}
+    public static void TestBooks(){
+        Book book = CreateDefaultBook();
+        SchoolBook schoolBook = CreateDefaultSchoolBook();
+        SpecialistBook specialistBook = CreateDefaultSpecialistBook();
+        Console.WriteLine(book.info());
+        Console.WriteLine(schoolBook.info());
+        Console.WriteLine(specialistBook.info());
+
     }
 }
