@@ -1,11 +1,14 @@
 using Javacream.Util;
 using Javacream.BusinessObjects;
+using Javacream.Music;
 namespace Javacream.People{
     public enum Gender{
         Male, Female, Diverse
     }
-    public class Person : IAddressable{ //"Person extends Object", implizit immer der Fall
-
+    public class Person : IAddressable, ISoundGenerator{ //"Person extends Object", implizit immer der Fall
+        public string MakeSound(){
+            return "Lalala";
+        }
         public Address GetAddressInfo(){
             return this.address;
         }

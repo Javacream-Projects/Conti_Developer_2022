@@ -25,13 +25,17 @@ namespace Javacream.Util{
 
         public void AddAddressable(IAddressable addressable){
             Address address = addressable.GetAddressInfo();
-            List<IAddressable> addressableList = this._book[address];
-            if (addressableList == null){
+            List<IAddressable> addressableList;
+            
+            try{
+             addressableList = this._book[address];
+            }
+            catch(Exception){
                 addressableList = new List<IAddressable>();
                 this._book.Add(address, addressableList);
             }
             addressableList.Add(addressable);
-            
+           
         }
     }
 

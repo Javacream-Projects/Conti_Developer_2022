@@ -1,9 +1,14 @@
 namespace Javacream.Music
 {
-    public abstract class Instrument
+    
+    public interface ISoundGenerator{
+        string MakeSound();
+
+    }
+    public abstract class Instrument:ISoundGenerator
     {
-        public string Description { get; set; }
         public abstract string MakeSound();
+        public string Description { get; set; }
         public Instrument(string desc){
             this.Description = desc;
         }
@@ -39,22 +44,22 @@ public class Band
 {
             public Band()
             {
-                this.Instruments = new List<Instrument>();
+                this.SoundGenerators = new List<ISoundGenerator>();
             }
 
-    private List<Instrument> Instruments;
+    private List<ISoundGenerator> SoundGenerators;
     public void Play()
     {
-        foreach (Instrument i in Instruments)
+        foreach (ISoundGenerator i in SoundGenerators)
         {
             Console.WriteLine(i.MakeSound());
         }
     }
-    public void AddInstrument(Instrument i){
-        this.Instruments.Add(i);
+    public void AddSoundGenerator(ISoundGenerator i){
+        this.SoundGenerators.Add(i);
     }
-    public void RemoveInstrument(Instrument i){
-        this.Instruments.Remove(i);
+    public void RemoveSoundGenerator(ISoundGenerator i){
+        this.SoundGenerators.Remove(i);
     }
 }
 }

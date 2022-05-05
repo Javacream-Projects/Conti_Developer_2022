@@ -13,6 +13,7 @@
             "args": [],
             "cwd": "${workspaceFolder}/People",
             "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
         },
         {

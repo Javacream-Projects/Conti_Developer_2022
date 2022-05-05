@@ -57,4 +57,17 @@ public static class Application{
 
     }
 
+    public static void TestSound(){
+        Guitar guitar1 = new Guitar("Fender 6 String");
+        Guitar guitar2 = new Guitar("Rickenbacher");
+        Bass bass = new Bass("Höfner");
+        Drum drum = new Drum("Ludwig");
+        Band band = new Band();
+        band.AddSoundGenerator(guitar1);
+        band.AddSoundGenerator(guitar2);
+        band.AddSoundGenerator(bass);
+        band.AddSoundGenerator(drum);
+        band.AddSoundGenerator(CreateDefaultPerson());
+        band.Play();        
+    }
 }
