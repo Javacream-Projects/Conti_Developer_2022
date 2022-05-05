@@ -6,7 +6,7 @@ namespace Javacream.Books{
             get{
             return _title;
             }
-            set {
+            private set {
                 if (value.Length >= 2){
                     this._title = value;
                 }else{
