@@ -107,4 +107,34 @@ public static SpecialistBook CreateDefaultSpecialistBook(){
 
 
     }
+
+    public static void TestPublisher(){
+        Publisher springer = new Publisher("Springer");
+        Console.WriteLine(springer.Name);
+        Book b1 = CreateDefaultBook();
+        Book b2 = CreateDefaultSchoolBook();
+        Book b3 = CreateDefaultSpecialistBook();        
+        springer.AddBook(b1);
+        springer.AddBook(b2);
+        springer.AddBook(b3);
+        Console.WriteLine("After adding 3 books:");
+        foreach (Book b in springer.GetAllBooks()){
+            Console.WriteLine(b.Info());
+        }
+        springer.RemoveBook(b2);
+        Console.WriteLine("After removing book b2:");
+        foreach (Book b in springer.GetAllBooks()){
+            Console.WriteLine(b.Info());
+        }
+        springer.ClearBooks();
+        Console.WriteLine("After clear:");
+
+        foreach (Book b in springer.GetAllBooks()){
+            Console.WriteLine(b.Info());
+        }
+
+
+
+
+    }
 }

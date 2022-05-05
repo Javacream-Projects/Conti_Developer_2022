@@ -1,7 +1,7 @@
 namespace Javacream.Books{
 
     public class Publisher{
-        string Name {get;}
+        public string Name {get;}
         private List<Book> _books;
 
         public Publisher(string name){
