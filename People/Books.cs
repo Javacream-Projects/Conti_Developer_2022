@@ -1,4 +1,35 @@
 namespace Javacream.Books{
+
+    public class BooksService{
+        private Dictionary<string, Book> _books = new Dictionary<string, Book>();
+        public Book CreateBook(string isbn, string title, int pages, double price, bool available, Dictionary<string, Object> options){
+            Book newBook;
+            try{
+                string topic = options["topic"].ToString();
+                newBook = new SpecialistBook(isbn, title, pages, price, available, topic);
+            }
+            catch(Exception){
+                try{
+                string subject = options["subject"].ToString();
+                int year = (int)options["year"];
+                newBook = new SchoolBook(isbn, title, pages, price, available, year, subject);
+                }
+                catch(Exception){
+                    newBook =  new Book(isbn, title, pages, price, available);
+                }
+            }
+            this._books.Add(isbn, newBook);
+            return newBook;
+        }
+
+        public Book FindBookByIsbn(string isbn){
+            return this._books[isbn];
+        }
+        public void DeleteBookByIsbn(string isbn){
+            this._books.Remove(isbn);
+        }
+
+    }
     public class Book{
         public string Isbn {get;}
         private string _title;
@@ -54,7 +85,7 @@ namespace Javacream.Books{
             this.Available = available;
         }
 
-        public virtual string info(){
+        public virtual string Info(){
             return "Book: isbn=" + Isbn + ", title=" + Title + ", pages=" + Pages + ", price=" + Price + ", available=" + Available;
         }
     }
@@ -67,8 +98,8 @@ namespace Javacream.Books{
             this.Year = year;
             this.Subject = subject;
         }
-        public override string info(){
-            return base.info() + ", year=" + Year + ", subject=" + Subject;
+        public override string Info(){
+            return base.Info() + ", year=" + Year + ", subject=" + Subject;
         }
 
     }
@@ -79,8 +110,8 @@ namespace Javacream.Books{
         public SpecialistBook(string isbn, string title, int pages, double price, bool available, string topic):base(isbn, title, pages, price, available){
             this.Topic = topic;
         }
-        public override string info(){
-            return base.info() + ", topic=" + Topic;
+        public override string Info(){
+            return base.Info() + ", topic=" + Topic;
         }
 
     }

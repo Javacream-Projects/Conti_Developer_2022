@@ -85,9 +85,25 @@ public static SpecialistBook CreateDefaultSpecialistBook(){
         Book book = CreateDefaultBook();
         SchoolBook schoolBook = CreateDefaultSchoolBook();
         SpecialistBook specialistBook = CreateDefaultSpecialistBook();
-        Console.WriteLine(book.info());
-        Console.WriteLine(schoolBook.info());
-        Console.WriteLine(specialistBook.info());
+        Console.WriteLine(book.Info());
+        Console.WriteLine(schoolBook.Info());
+        Console.WriteLine(specialistBook.Info());
+
+    }
+    public static void TestBooksService(){
+        BooksService booksService = new BooksService();
+        Dictionary<string, Object> empty= new Dictionary<string, Object>();
+        Dictionary<string, Object> school = new Dictionary<string, Object>();
+        school.Add("year", 10);
+        school.Add("subject", "sports");
+        Dictionary<string, Object> specialist = new Dictionary<string, Object>();
+        specialist.Add("topic", "gardening");
+        Console.WriteLine(booksService.CreateBook("ISBN1", "Title1", 120, 29.99, true, empty).Info());
+        Console.WriteLine(booksService.CreateBook("ISBN2", "Title2", 130, 19.99, true, school).Info());
+        Console.WriteLine(booksService.CreateBook("ISBN3", "Title3", 110, 9.99, true, specialist).Info());
+        Console.WriteLine(booksService.FindBookByIsbn("ISBN3").Info());
+
+
 
     }
 }
