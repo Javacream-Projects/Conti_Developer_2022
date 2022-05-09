@@ -145,8 +145,16 @@ namespace Javacream.Books
         }
 
     }
-    public class Book
+    public class Book : Object, IComparable<Book>
     {
+
+        public int CompareTo(Book? book){
+            if (book != null){
+                return this.Title.CompareTo(book.Title);
+            }else{
+                throw new Exception ("null cannot be compared");
+            }
+        }
         public Isbn Isbn { get; }
         private string? _title;
         public string Title
@@ -223,6 +231,11 @@ namespace Javacream.Books
         public virtual string Info()
         {
             return "Book: isbn=" + Isbn.ToString() + ", title=" + Title + ", pages=" + Pages + ", price=" + Price + ", available=" + Available;
+        }
+
+        public override string ToString()
+        {
+            return Info();
         }
     }
 
