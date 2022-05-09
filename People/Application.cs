@@ -41,6 +41,7 @@ public static SpecialistBook CreateDefaultSpecialistBook(){
         result.ForEach(Console.WriteLine);
         result.Sort((b1, b2) => b1.Price.CompareTo(b2.Price));
         result.ForEach(Console.WriteLine);
+        List<string> bookTitle = result.ConvertAll(book => book.Title);
 
     }
 
