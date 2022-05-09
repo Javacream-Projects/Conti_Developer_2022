@@ -122,6 +122,12 @@ namespace Javacream.Books
             this._books.Remove(isbn);
         }
 
+        public List<Book> FindBooksByTitle(string title){
+            var bookList = this._books.Values.ToList();
+            return bookList.FindAll(bookList => bookList.Title.Equals(title));
+        }
+
+
     }
     public class Book
     {
