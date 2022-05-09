@@ -39,12 +39,24 @@ namespace Javacream.Books{
         }
         public override int GetHashCode()
         {
-            return 0;
+            //Prinzipiell OK, aber führt zu Performance-Problemen
+            //return 0;
+            //Gut unter Annahme, dass jeder Part nur den Wertebereich 1-999 haben kann
+            return 1000000000 * _part1 + 1000000 *_part2 + 1000 * _part3 + _part4;
         }
 
         public override bool Equals(Object obj)
         {
-            return true;
+            if (this == obj){
+                return true;
+            }
+            if (obj.GetType != this.GetType){
+                return false;
+            }
+
+            Isbn toCompare = (Isbn)obj;
+
+            return this._part1 == toCompare._part1 && this._part2 == toCompare._part2 && this._part3 == toCompare._part3 && this._part4 == toCompare._part4;
         }
         
 
