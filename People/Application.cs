@@ -3,7 +3,7 @@ using Javacream.People;
 using Javacream.BusinessObjects;
 using Javacream.Music;
 using Javacream.Books;
-
+using JavacreamToDo;
 public static class Application{
     public static University CreateDefaultUniversity(){
         return new University("LMU", new Address(81371, "München", "Marienplatz"));
@@ -137,4 +137,15 @@ public static SpecialistBook CreateDefaultSpecialistBook(){
 
 
     }
+
+     public static void TestToDoService(){
+         ToDoService toDoService = new ToDoService();
+         toDoService.AddToDoItem(new ToDoItem("eat"));
+         Console.WriteLine(toDoService.GetToDoItems());
+         toDoService.AddToDoItem(new ToDoItem("eat", ToDoStatus.In_Progress));
+         Console.WriteLine(toDoService.GetToDoItems());
+        toDoService.ChangeStatus(0, ToDoStatus.In_Progress);
+         Console.WriteLine(toDoService.GetToDoItems());
+
+     }
 }
