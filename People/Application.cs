@@ -29,9 +29,8 @@ public static SpecialistBook CreateDefaultSpecialistBook(){
         specialist.Add("topic", "gardening");
         Console.WriteLine(booksService.CreateBook(new Isbn(1,2,3,4), "Title1", 120, 29.99, true, empty).Info());
         Console.WriteLine(booksService.CreateBook(new Isbn(1,2,3,5), "Title2", 130, 19.99, true, school).Info());
-        Isbn isbn3 = new Isbn(1,2,3,6);
-        Console.WriteLine(booksService.CreateBook(isbn3, "Title3", 110, 9.99, true, specialist).Info());
-        Console.WriteLine(booksService.FindBookByIsbn(isbn3).Info());
+        Console.WriteLine(booksService.CreateBook(new Isbn(1,2,3,6), "Title3", 110, 9.99, true, specialist).Info());
+        Console.WriteLine(booksService.FindBookByIsbn(new Isbn(1,2,3,6)).Info());
 
 
 

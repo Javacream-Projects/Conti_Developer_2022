@@ -66,7 +66,7 @@ namespace Javacream.Books
                 {
                     return true;
                 }
-                if (obj.GetType != this.GetType)
+                if (obj.GetType() != this.GetType())
                 {
                     return false;
                 }
