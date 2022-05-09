@@ -8,6 +8,7 @@ public class FunctionsDemo
         int number = 9;
         //Der new-Operator erzeugt Objekte und gibt die Referenz zurück
         Book b = new Book(new Isbn(1, 2, 3, 4), "title", 200, 19.99, false);
+        Console.WriteLine(message + number);
     }
 
     public void doTypeInference()
@@ -20,7 +21,7 @@ public class FunctionsDemo
         Book b2 = new(new(1, 2, 3, 4), "title", 200, 19.99, false);
 
         //var isbn = new (1,2,3,4); so dann doch nicht...
-
+        Console.WriteLine(message + number);
     }
     public Object introduceFunctionObjects()
     {

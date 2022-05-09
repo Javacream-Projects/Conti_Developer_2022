@@ -131,6 +131,11 @@ namespace Javacream.Books
             return bookList.FindAll(book => book.Price > minPrice && book.Price < maxPrice);
         }
 
+        public List<Book> FindBooksByTitle2(string title){
+            Predicate<Book> predicate = book => book.Title.Equals(title);
+            var bookList = this._books.Values.ToList();
+            return bookList.FindAll(predicate);
+        }
 
     }
     public class Book
