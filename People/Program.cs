@@ -1,16 +1,7 @@
-﻿using Javacream.CollectionsDemo;
-while(true){
-Console.Write("enter a test (hash, todo, pub, bs, b, s, c, u, p, a) or x for exit:");    
-string test = Console.ReadLine();
+﻿while(true){
+Console.Write("enter a test (pub, bs, b) or x for exit:");    
+string? test = Console.ReadLine();
 switch (test){
-    case "hash": {
-        CollectionsDemo.TestHashCodeAndEquals();
-        break;
-    }
-    case "todo": {
-        Application.TestToDoService();
-        break;
-    }
     case "pub": {
         Application.TestPublisher();
         break;
@@ -22,26 +13,6 @@ switch (test){
     }
     case "b": {
         Application.TestBooks();
-        break;
-    }
-    case "s": {
-        Application.TestSound();
-        break;
-    }
-    case "a": {
-        Application.TestAddressBook();
-        break;
-    }
-    case "c": {
-        Application.TestCompany();
-        break;
-    }
-    case "u": {
-        Application.TestUniversity();
-        break;
-    }
-    case "p": {
-        Application.TestPeople();
         break;
     }
     case "x": {
