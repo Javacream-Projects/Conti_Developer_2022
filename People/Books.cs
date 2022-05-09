@@ -124,7 +124,11 @@ namespace Javacream.Books
 
         public List<Book> FindBooksByTitle(string title){
             var bookList = this._books.Values.ToList();
-            return bookList.FindAll(bookList => bookList.Title.Equals(title));
+            return bookList.FindAll(book => book.Title.Equals(title));
+        }
+        public List<Book> FindBooksByPriceRange(double minPrice, double maxPrice){
+            var bookList = this._books.Values.ToList();
+            return bookList.FindAll(book => book.Price > minPrice && book.Price < maxPrice);
         }
 
 
