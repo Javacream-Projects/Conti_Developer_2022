@@ -37,6 +37,16 @@ namespace Javacream.Books{
             this._part4 = p4;
 
         }
+        public override int GetHashCode()
+        {
+            return 0;
+        }
+
+        public override bool Equals(Object obj)
+        {
+            return true;
+        }
+        
 
         public override string ToString(){
             string isbnAsString = "ISBN:" + _part1 + "-" + _part2 + "-" + _part3 + "-" + _part4; 

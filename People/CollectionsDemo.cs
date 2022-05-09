@@ -1,4 +1,5 @@
 using Javacream.People;
+using Javacream.Books;
 namespace Javacream.CollectionsDemo{
     public static class CollectionsDemo{
         public static void SetDemo(){
@@ -57,5 +58,24 @@ namespace Javacream.CollectionsDemo{
 
         }
 
+
+        public static void TestHashCodeAndEquals(){
+            Isbn isbn1 = new Isbn(1,2,3,4);
+            Isbn isbn2 = new Isbn(1,2,3,5);
+            Isbn isbn3 = new Isbn(1,2,3,4);
+
+            Console.WriteLine(isbn1 == isbn2);
+            Console.WriteLine(isbn1 == isbn3);
+            Console.WriteLine(isbn1.GetHashCode());
+            Console.WriteLine(isbn3.GetHashCode());
+
+            HashSet<Isbn> isbns = new HashSet<Isbn>();
+            isbns.Add(isbn1);
+            isbns.Add(isbn2);
+            isbns.Add(isbn3);
+            Console.WriteLine(isbns.Count);
+
+        }
     }
+
 }

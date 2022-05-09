@@ -1,8 +1,12 @@
-﻿using Javacream.People;
+﻿using Javacream.CollectionsDemo;
 while(true){
-Console.Write("enter a test (todo, pub, bs, b, s, c, u, p, a) or x for exit:");    
+Console.Write("enter a test (hash, todo, pub, bs, b, s, c, u, p, a) or x for exit:");    
 string test = Console.ReadLine();
 switch (test){
+    case "hash": {
+        CollectionsDemo.TestHashCodeAndEquals();
+        break;
+    }
     case "todo": {
         Application.TestToDoService();
         break;
@@ -44,6 +48,5 @@ switch (test){
         Environment.Exit(0);
         break;
     }
-
 }
 }
