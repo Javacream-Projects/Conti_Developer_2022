@@ -1,4 +1,6 @@
-namespace Javacream.Util{
+using Javacream.Books;
+namespace Javacream.Util
+{
     public struct Address{
         public string City {get;}
         public string Street {get;}
@@ -48,6 +50,11 @@ namespace Javacream.Util{
                 tab += "...";
                 type = type.BaseType;
             }
+        }
+    }
+class BookUtils{
+        public static bool CheckABook(Book b){
+            return false;
         }
     }
 }

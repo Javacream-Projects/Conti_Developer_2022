@@ -1,3 +1,4 @@
+using Javacream.Util;
 namespace Javacream.Books
 {
 
@@ -132,9 +133,15 @@ namespace Javacream.Books
         }
 
         public List<Book> FindBooksByTitle2(string title){
-            Predicate<Book> predicate = book => book.Title.Equals(title);
+            Predicate<Book> predicate = book => book.Title.Equals(title);//decorator als Lambda
+            Predicate<Book> p2 = this.checkBook;//decorator als Objekt-Methode
+            Predicate<Book> p3 = BookUtils.CheckABook;//decorator als statische Klassenmethode
             var bookList = this._books.Values.ToList();
             return bookList.FindAll(predicate);
+        }
+
+        bool checkBook(Book b){
+            return b.Title.Length == 42;
         }
 
     }
