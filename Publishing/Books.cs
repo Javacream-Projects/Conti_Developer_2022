@@ -34,7 +34,17 @@ namespace Javacream.Books
         }
 
     }
-    public class BooksService
+    public interface IBooksService
+    {
+        Isbn CreateBook(string title, int pages, double price, Dictionary<string, Object> options);
+        Book FindBookByIsbn(Isbn isbn);
+        void DeleteBookByIsbn(Isbn isbn);
+        List<Book> FindBooksByTitle(string title);
+        List<Book> FindBooksByPriceRange(double minPrice, double maxPrice);
+
+    }
+
+    public class BooksService : IBooksService
     {
         private IIsbnService _isbnService = new IsbnService();
         private IStoreService _storeService = new StoreService();
@@ -46,7 +56,7 @@ namespace Javacream.Books
             Book newBook;
             try
             {
-            string? topic = options["topic"].ToString();
+                string? topic = options["topic"].ToString();
                 newBook = new SpecialistBook(isbn, title, pages, price, available, topic!);
             }
             catch (Exception)
@@ -77,11 +87,13 @@ namespace Javacream.Books
             this._books.Remove(isbn);
         }
 
-        public List<Book> FindBooksByTitle(string title){
+        public List<Book> FindBooksByTitle(string title)
+        {
             var bookList = this._books.Values.ToList();
             return bookList.FindAll(book => book.Title.Equals(title)).ConvertAll(book => SetAvailability(book));
         }
-        public List<Book> FindBooksByPriceRange(double minPrice, double maxPrice){
+        public List<Book> FindBooksByPriceRange(double minPrice, double maxPrice)
+        {
             var bookList = this._books.Values.ToList();
             return bookList.FindAll(book => book.Price > minPrice && book.Price < maxPrice).ConvertAll(this.SetAvailability);
         }
@@ -89,9 +101,12 @@ namespace Javacream.Books
         private Book SetAvailability(Book book)
         {
             int stockForIsbn = this._storeService.GetStock("books", book.Isbn);
-            if (stockForIsbn > 0){
+            if (stockForIsbn > 0)
+            {
                 book.Available = true;
-            } else{
+            }
+            else
+            {
                 book.Available = false;
             }
             return book;
@@ -100,11 +115,15 @@ namespace Javacream.Books
     public class Book : Object, IComparable<Book>
     {
 
-        public int CompareTo(Book? book){
-            if (book != null){
+        public int CompareTo(Book? book)
+        {
+            if (book != null)
+            {
                 return this.Title.CompareTo(book.Title);
-            }else{
-                throw new Exception ("null cannot be compared");
+            }
+            else
+            {
+                throw new Exception("null cannot be compared");
             }
         }
         public Isbn Isbn { get; }

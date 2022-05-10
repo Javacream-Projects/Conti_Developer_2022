@@ -20,7 +20,7 @@ public static SpecialistBook CreateDefaultSpecialistBook(){
 
     }
     public static void TestBooksService(){
-        BooksService booksService = new BooksService();
+        IBooksService booksService = new BooksService();
         Dictionary<string, Object> empty= new Dictionary<string, Object>();
         Dictionary<string, Object> school = new Dictionary<string, Object>();
         school.Add("year", 10);
