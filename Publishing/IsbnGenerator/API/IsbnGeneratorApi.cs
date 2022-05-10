@@ -1,18 +1,23 @@
 namespace Javacream.IsbnGenerator.API{
     public class Isbn
     {
+        private string _prefix;
+        private string _countryCode;
         private int _part1;
         private int _part2;
         private int _part3;
         private int _part4;
 
-        public Isbn(int p1, int p2, int p3, int p4)
-        {
+        public Isbn(int p1, int p2, int p3, int p4) :this("ISBN:", "-world", p1, p2, p3, p4)
+        {}
+
+        public Isbn(string prefix, string countryCode, int p1, int p2, int p3, int p4){
             this._part1 = p1;
             this._part2 = p2;
             this._part3 = p3;
             this._part4 = p4;
-
+            this._countryCode = countryCode;
+            this._prefix = prefix;
         }
 
         public override int GetHashCode()
@@ -49,7 +54,7 @@ namespace Javacream.IsbnGenerator.API{
 
         public override string ToString()
         {
-            string isbnAsString = "ISBN:" + _part1 + "-" + _part2 + "-" + _part3 + "-" + _part4;
+            string isbnAsString = _prefix + _part1 + "-" + _part2 + "-" + _part3 + "-" + _part4 + _countryCode;
             return isbnAsString;
         }
 
