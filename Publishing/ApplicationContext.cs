@@ -3,7 +3,7 @@ using Javacream.Store;
 using Javacream.Books;
 
 public static class ApplicationContext{
-    public static IIsbnService _isbnService = new IsbnService();
+    public static IIsbnService _isbnService = new RandomIsbnService();
     public static IIsbnService IIsbnService(){
         return _isbnService;
     }

@@ -55,7 +55,7 @@ namespace Javacream.IsbnGenerator{
 
     }
 
-    public class IsbnService:IIsbnService{
+    public class CounterIsbnService:IIsbnService{
         private static int _counter = 1;
 
         public Isbn Next(){
@@ -63,6 +63,16 @@ namespace Javacream.IsbnGenerator{
 
         }
     }
+
+    public class RandomIsbnService:IIsbnService{
+        private Random random = new Random();
+
+        public Isbn Next(){
+            return new Isbn(1,2,3, random.Next(0, 999));
+
+        }
+    }
+
 
     public interface IIsbnService{
         public Isbn Next();
