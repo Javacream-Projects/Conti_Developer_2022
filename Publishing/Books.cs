@@ -39,7 +39,6 @@ namespace Javacream.Books
         private int _part3;
         private int _part4;
 
-        private static int _counter=1;
         public Isbn(int p1, int p2, int p3, int p4)
         {
             this._part1 = p1;
@@ -49,8 +48,6 @@ namespace Javacream.Books
 
         }
 
-        public Isbn() :this(1,2,3, _counter++){
-        }
         public override int GetHashCode()
         {
             //Prinzipiell OK, aber führt zu Performance-Problemen
@@ -92,9 +89,11 @@ namespace Javacream.Books
     }
     public class BooksService
     {
+        private static int _counter = 1;
         private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
-        public Book CreateBook(Isbn isbn, string title, int pages, double price, bool available, Dictionary<string, Object> options)
+        public Book CreateBook(string title, int pages, double price, bool available, Dictionary<string, Object> options)
         {
+            Isbn isbn = new Isbn(1,2,3, _counter++);
             Book newBook;
             try
             {
