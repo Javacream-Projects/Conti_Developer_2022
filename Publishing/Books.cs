@@ -39,7 +39,7 @@ namespace Javacream.Books
         private IsbnService _isbnService = new IsbnService();
         private StoreService _storeService = new StoreService();
         private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
-        public Book CreateBook(string title, int pages, double price, Dictionary<string, Object> options)
+        public Isbn CreateBook(string title, int pages, double price, Dictionary<string, Object> options)
         {
             bool available = false;
             Isbn isbn = this._isbnService.Next();
@@ -63,7 +63,7 @@ namespace Javacream.Books
                 }
             }
             this._books.Add(isbn, newBook);
-            return newBook;
+            return isbn;
         }
 
         public Book FindBookByIsbn(Isbn isbn)
