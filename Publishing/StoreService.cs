@@ -1,7 +1,7 @@
 using Javacream.IsbnGenerator;
 namespace Javacream.Store{
-    public class StoreService{
-        class StoreEntry{
+    public class StoreService : IStoreService{
+        public class StoreEntry{
             public StoreEntry(string cat, Object item){
                 this._category = cat;
                 this._item = item;
@@ -25,7 +25,7 @@ namespace Javacream.Store{
                 }
             }
         }
-        private Dictionary<StoreEntry, int> _stock;
+        public Dictionary<StoreEntry, int> _stock;
         
         public StoreService(){
          _stock = new Dictionary<StoreEntry, int>();
@@ -42,5 +42,9 @@ namespace Javacream.Store{
                 return 0;
             }
         }
+    }
+
+    public interface IStoreService{
+        public int GetStock(string category, Object item);
     }
 }

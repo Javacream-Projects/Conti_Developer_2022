@@ -36,8 +36,8 @@ namespace Javacream.Books
     }
     public class BooksService
     {
-        private IsbnService _isbnService = new IsbnService();
-        private StoreService _storeService = new StoreService();
+        private IIsbnService _isbnService = new IsbnService();
+        private IStoreService _storeService = new StoreService();
         private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
         public Isbn CreateBook(string title, int pages, double price, Dictionary<string, Object> options)
         {

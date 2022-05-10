@@ -55,12 +55,16 @@ namespace Javacream.IsbnGenerator{
 
     }
 
-    public class IsbnService{
+    public class IsbnService:IIsbnService{
         private static int _counter = 1;
 
         public Isbn Next(){
             return new Isbn(1,2,3, _counter++);
 
         }
+    }
+
+    public interface IIsbnService{
+        public Isbn Next();
     }
 }
