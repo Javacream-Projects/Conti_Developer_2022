@@ -69,12 +69,7 @@ namespace Javacream.Books
         public Book FindBookByIsbn(Isbn isbn)
         {
             Book book = this._books[isbn];
-            int stockForIsbn = this._storeService.GetStock("books", isbn);
-            if (stockForIsbn > 0){
-                book.Available = true;
-            } else{
-                book.Available = false;
-            }
+            this.SetAvailability(book);
             return book;
         }
         public void DeleteBookByIsbn(Isbn isbn)
@@ -84,11 +79,22 @@ namespace Javacream.Books
 
         public List<Book> FindBooksByTitle(string title){
             var bookList = this._books.Values.ToList();
-            return bookList.FindAll(book => book.Title.Equals(title));
+            return bookList.FindAll(book => book.Title.Equals(title)).ConvertAll(book => SetAvailability(book));
         }
         public List<Book> FindBooksByPriceRange(double minPrice, double maxPrice){
             var bookList = this._books.Values.ToList();
-            return bookList.FindAll(book => book.Price > minPrice && book.Price < maxPrice);
+            return bookList.FindAll(book => book.Price > minPrice && book.Price < maxPrice).ConvertAll(this.SetAvailability);
+        }
+
+        private Book SetAvailability(Book book)
+        {
+            int stockForIsbn = this._storeService.GetStock("books", book.Isbn);
+            if (stockForIsbn > 0){
+                book.Available = true;
+            } else{
+                book.Available = false;
+            }
+            return book;
         }
     }
     public class Book : Object, IComparable<Book>
