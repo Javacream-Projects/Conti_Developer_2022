@@ -27,10 +27,10 @@ public static SpecialistBook CreateDefaultSpecialistBook(){
         school.Add("subject", "sports");
         Dictionary<string, Object> specialist = new Dictionary<string, Object>();
         specialist.Add("topic", "gardening");
-        Console.WriteLine(booksService.CreateBook(new Isbn(1,2,3,4), "fTitle1", 120, 29.99, true, empty).Info());
-        Console.WriteLine(booksService.CreateBook(new Isbn(1,2,3,5), "kTitle2", 130, 19.99, true, school).Info());
-        Console.WriteLine(booksService.CreateBook(new Isbn(1,2,3,6), "aTitle3", 110, 9.99, true, specialist).Info());
-        Console.WriteLine(booksService.FindBookByIsbn(new Isbn(1,2,3,6)).Info());
+        Console.WriteLine(booksService.CreateBook(new Isbn(), "fTitle1", 120, 29.99, true, empty).Info());
+        Console.WriteLine(booksService.CreateBook(new Isbn(), "kTitle2", 130, 19.99, true, school).Info());
+        Console.WriteLine(booksService.CreateBook(new Isbn(), "aTitle3", 110, 9.99, true, specialist).Info());
+        Console.WriteLine(booksService.FindBookByIsbn(new Isbn()).Info());
         //Console.WriteLine(booksService.FindBooksByTitle("Title2"));
         //Console.WriteLine(booksService.FindBooksByPriceRange(5,25));
         //booksService.FindBooksByTitle("Title2").ForEach(book => Console.WriteLine(book));
