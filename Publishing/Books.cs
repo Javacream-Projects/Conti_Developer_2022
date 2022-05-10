@@ -1,4 +1,5 @@
 using Javacream.IsbnGenerator;
+using Javacream.Store;
 
 namespace Javacream.Books
 {
@@ -36,9 +37,11 @@ namespace Javacream.Books
     public class BooksService
     {
         private IsbnService _isbnService = new IsbnService();
+        private StoreService _storeService = new StoreService();
         private Dictionary<Isbn, Book> _books = new Dictionary<Isbn, Book>();
-        public Book CreateBook(string title, int pages, double price, bool available, Dictionary<string, Object> options)
+        public Book CreateBook(string title, int pages, double price, Dictionary<string, Object> options)
         {
+            bool available = false;
             Isbn isbn = this._isbnService.Next();
             Book newBook;
             try
@@ -65,7 +68,14 @@ namespace Javacream.Books
 
         public Book FindBookByIsbn(Isbn isbn)
         {
-            return this._books[isbn];
+            Book book = this._books[isbn];
+            int stockForIsbn = this._storeService.GetStock("books", isbn);
+            if (stockForIsbn > 0){
+                book.Available = true;
+            } else{
+                book.Available = false;
+            }
+            return book;
         }
         public void DeleteBookByIsbn(Isbn isbn)
         {
