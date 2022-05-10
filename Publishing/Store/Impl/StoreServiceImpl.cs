@@ -1,5 +1,6 @@
-using Javacream.IsbnGenerator;
-namespace Javacream.Store{
+using Javacream.IsbnGenerator.API;
+using Javacream.Store.API;
+namespace Javacream.Store.Impl{
     public class StoreService : IStoreService{
         public class StoreEntry{
             public StoreEntry(string cat, Object item){
@@ -42,9 +43,5 @@ namespace Javacream.Store{
                 return 0;
             }
         }
-    }
-
-    public interface IStoreService{
-        public int GetStock(string category, Object item);
     }
 }

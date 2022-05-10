@@ -1,6 +1,9 @@
-using Javacream.IsbnGenerator;
-using Javacream.Store;
-using Javacream.Books;
+using Javacream.IsbnGenerator.API;
+using Javacream.IsbnGenerator.Impl;
+using Javacream.Store.API;
+using Javacream.Store.Impl;
+using Javacream.Books.API;
+using Javacream.Books.Impl;
 
 public static class ApplicationContext{
     static ApplicationContext(){

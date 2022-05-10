@@ -1,5 +1,5 @@
-using Javacream.IsbnGenerator;
-using Javacream.Books;
+using Javacream.IsbnGenerator.API;
+using Javacream.Books.API;
 public static class Application{
 public static Book CreateDefaultBook(){
     return new Book(new Isbn(1,2,3,4), "Title 1", 100, 19.99, true);
