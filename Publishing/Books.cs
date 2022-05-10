@@ -131,19 +131,6 @@ namespace Javacream.Books
             var bookList = this._books.Values.ToList();
             return bookList.FindAll(book => book.Price > minPrice && book.Price < maxPrice);
         }
-
-        public List<Book> FindBooksByTitle2(string title){
-            Predicate<Book> predicate = book => book.Title.Equals(title);//delegate als Lambda
-            Predicate<Book> p2 = this.checkBook;//delegate als Objekt-Methode
-            Predicate<Book> p3 = BookUtils.CheckABook;//delegate als statische Klassenmethode
-            var bookList = this._books.Values.ToList();
-            return bookList.FindAll(predicate);
-        }
-
-        bool checkBook(Book b){
-            return b.Title.Length == 42;
-        }
-
     }
     public class Book : Object, IComparable<Book>
     {
