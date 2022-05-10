@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/People/bin/Debug/net6.0/People.dll",
+            "program": "${workspaceFolder}/Publishing/bin/Debug/net6.0/Publishing.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/People",
+            "cwd": "${workspaceFolder}/Publishing",
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "stopAtEntry": false
