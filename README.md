@@ -17,4 +17,4 @@
   * 9:00 - 16:15
   * Kaffeepausen 10:30 - 10:45 und 14:30 - 14:45
   * Mittagspause 45’ 12:15-13:00
-  * Dienstag 3.5. und Mittwoch 4.5. Seminafbeginn um 8:30! 
+  * Dienstag 3.5. und Mittwoch 4.5. Seminarbeginn um 8:30! 
