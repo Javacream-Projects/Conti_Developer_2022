@@ -1,4 +1,3 @@
-using Javacream.IsbnGenerator.API;
 using Javacream.Store.API;
 namespace Javacream.Store.Impl{
     public class StoreService : IStoreService{
@@ -30,8 +29,6 @@ namespace Javacream.Store.Impl{
         
         public StoreService(){
          _stock = new Dictionary<StoreEntry, int>();
-         _stock.Add(new StoreEntry("books", new Isbn(1,2,3,1)), 42);
-         _stock.Add(new StoreEntry("books", new Isbn(1,2,3,3)), 10);
         }
 
         public int GetStock(string category, Object item){

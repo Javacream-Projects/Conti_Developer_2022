@@ -1,4 +1,3 @@
-using Javacream.Books.API;
 namespace Javacream.Util
 {
 
@@ -87,13 +86,6 @@ namespace Javacream.Util
                 tab += "...";
                 type = type.BaseType;
             }
-        }
-    }
-    class BookUtils
-    {
-        public static bool CheckABook(Book b)
-        {
-            return false;
         }
     }
 }

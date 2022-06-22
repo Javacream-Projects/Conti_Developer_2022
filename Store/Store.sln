@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publishing", "Publishing\Publishing.csproj", "{281A2E03-9564-48ED-9FC8-FB775632CAC1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Javacream.Store", "Javacream.Store\Javacream.Store.csproj", "{37973203-513C-428A-8DDE-58FE12D94844}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{281A2E03-9564-48ED-9FC8-FB775632CAC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{281A2E03-9564-48ED-9FC8-FB775632CAC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{281A2E03-9564-48ED-9FC8-FB775632CAC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{281A2E03-9564-48ED-9FC8-FB775632CAC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37973203-513C-428A-8DDE-58FE12D94844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37973203-513C-428A-8DDE-58FE12D94844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37973203-513C-428A-8DDE-58FE12D94844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37973203-513C-428A-8DDE-58FE12D94844}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

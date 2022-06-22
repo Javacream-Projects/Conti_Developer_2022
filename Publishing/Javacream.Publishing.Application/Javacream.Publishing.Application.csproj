@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Javacream.Store" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Javacream.Publishing.Books.IsbnGenerator\Javacream.Publishing.Books.IsbnGenerator.csproj" />
+    <ProjectReference Include="..\Javacream.Publishing.Books.Warehouse\Javacream.Publishing.Books.Warehouse.csproj" />
+  </ItemGroup>
+
+</Project>
