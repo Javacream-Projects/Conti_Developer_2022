@@ -40,5 +40,11 @@ namespace Javacream.Store.Impl{
                 return 0;
             }
         }
+
+        public void SetStock(string category, Object item, int stock){
+            StoreEntry entry = new StoreEntry(category, item);
+            _stock.Remove(entry);
+            _stock.Add(entry, stock);
+        }
     }
 }

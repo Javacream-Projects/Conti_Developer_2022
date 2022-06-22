@@ -12,7 +12,7 @@ namespace Javacream.IsbnGenerator.Impl
         private static int _counter = 1;
 
         public override Isbn Next(){
-            return new Isbn(_prefix, _countryCode, 1,2,3, _counter++);
+            return new Isbn(_prefix, _countryCode, 1,2,4, _counter++);
 
         }
     }
