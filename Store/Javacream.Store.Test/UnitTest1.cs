@@ -13,6 +13,13 @@ public class Tests
     [Test]
     public void Test1()
     {
+        Console.WriteLine ("test1");
+        Assert.Pass();
+    }
+   [Test]
+    public void Test2()
+    {
+        Console.WriteLine ("test2");
         Assert.Pass();
     }
 }
