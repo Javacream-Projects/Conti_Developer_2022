@@ -18,3 +18,7 @@
   * Kaffeepausen 10:30 - 10:45 und 14:30 - 14:45
   * Mittagspause 45’ 12:15-13:00
   * Dienstag 3.5. und Mittwoch 4.5. Seminarbeginn um 8:30! 
+  * **ÄNDERUNGEN Block 3/Block 4**
+    * Donnerstag 23.6., 30.6. 9:00 - **16:45**
+    * Freitag 24.6., 1.7. 9:00 - **16:45**
+    * Mittwoch 29.6 **13:00** - 16:45
