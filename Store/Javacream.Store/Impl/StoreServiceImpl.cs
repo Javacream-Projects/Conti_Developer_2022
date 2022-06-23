@@ -3,6 +3,12 @@ namespace Javacream.Store.Impl{
     public class StoreService : IStoreService{
         public class StoreEntry{
             public StoreEntry(string cat, Object item){
+                if (cat == null){
+                    throw new ArgumentException("null category");
+                }
+                if (item == null){
+                    throw new ArgumentException("null item");
+                }
                 this._category = cat;
                 this._item = item;
             }
@@ -32,16 +38,22 @@ namespace Javacream.Store.Impl{
         }
 
         public int GetStock(string category, Object item){
-            try{
-                int stock = _stock[new StoreEntry(category, item)];
+            int stock = 0;
+            bool hasStock = _stock.TryGetValue(new StoreEntry(category, item), out stock);
+            if (hasStock)
+            {
                 return stock;
-            }
-            catch(Exception){
+            }else
+            {
                 return 0;
             }
-        }
+            }
+        
 
         public void SetStock(string category, Object item, int stock){
+            if (stock < 0){
+                throw new ArgumentException("stock was null");
+            }
             StoreEntry entry = new StoreEntry(category, item);
             _stock.Remove(entry);
             _stock.Add(entry, stock);
